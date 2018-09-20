@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#cf3339",
+    "navigationBarTextStyle": "#cf3339"
+  },
+  "tabBar": {
+    "backgroundColor": "#cf3339",
+    "color": "#fff",
+    "selectedColor": "#8a8a8a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "今日",
+        "iconPath": "./images/date.png",
+        "selectedIconPath": "./images/date1.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "黄历",
+        "iconPath": "./images/huangli.png",
+        "selectedIconPath": "./images/huangli1.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "解梦",
+        "iconPath": "./images/cloud.png",
+        "selectedIconPath": "./images/cloud1.png"
+      }
+    ]
+  }
+}

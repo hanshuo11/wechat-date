@@ -1,0 +1,44 @@
+/**index.wxss**/
+.top-navi {
+    width: 750rpx;
+    height: 50rpx;
+    text-align: center;
+}
+
+.date-box {
+    width: 750rpx;
+    height: 440rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-box-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 330rpx;
+    color: #cf3339;
+    font-weight: 600;
+}
+
+.date-box-year {
+    width: 750rpx;
+    height: 50rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cf3339;
+}
+
+.content {
+    width: 710rpx;
+    height: 630rpx;
+    margin: 20rpx auto;
+    background: url(http://img12.360buyimg.com/uba/jfs/t1/5176/35/6570/337775/5ba31ba7Ea5c9184e/18eb993fc7654dd9.png) no-repeat 0 0;
+    background-size: 710rpx 600rpx;
+}
+
+/* 字体图标 */
+.icon-begindate:before {
+    content: "\e60b"
+}

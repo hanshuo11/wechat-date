@@ -1,0 +1,12 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="date-box">
+    <view class="date-box-day">30</view>
+    <view class="date-box-year">二零一八年戊戌(狗)年七月三十</view>
+  </view>
+  <view class="content">
+
+  </view>
+  <!-- 弹框 -->
+  <!-- <dialog id='dialog' title='我是标题' content='恭喜恭喜' cancelText='取消' confirm='确定' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></dialog> -->
+</view>
