@@ -1,4 +1,5 @@
 /**index.wxss**/
+
 .top-navi {
     width: 750rpx;
     height: 50rpx;
@@ -34,11 +35,85 @@
     width: 710rpx;
     height: 630rpx;
     margin: 20rpx auto;
+    padding: 8rpx;
     background: url(http://img12.360buyimg.com/uba/jfs/t1/5176/35/6570/337775/5ba31ba7Ea5c9184e/18eb993fc7654dd9.png) no-repeat 0 0;
     background-size: 710rpx 600rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.shengxiao-line {
+    height: 150rpx;
+    width: 650rpx;
+    padding-left: 45rpx;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.constellation{
+  width: 140rpx;
+  height:140rpx;
+  border-right: 4rpx solid #cf3339;
+  border-bottom: 4rpx solid #cf3339;
+  position: absolute;
+  left:0;
+  border-bottom-right-radius: 10%;
+}
+.shengxiao{
+  width: 140rpx;
+  height:140rpx;
+  border-left: 4rpx solid #cf3339;
+  border-bottom: 4rpx solid #cf3339;
+  position: absolute;
+  border-bottom-left-radius: 10%;
+  right:0;
+}
+
+.content-line {
+    height: 100rpx;
+    width: 675rpx;
+    padding-left: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.icon-font {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    background: #cf3339;
+    text-align: center;
+    line-height: 70rpx;
+    color: #fff;
+    align-self: center;
+}
+
+.content-font {
+    height: 80rpx;
+    width: 580rpx;
+    overflow: hidden;
+    line-height: 38rpx;
+    padding: 10rpx;
 }
 
 /* 字体图标 */
+
 .icon-begindate:before {
     content: "\e60b"
+}
+
+.frame {
+    border-top: 4rpx solid #cf3339;
+}
+
+.font {
+    width: 60rpx;
+    height: 40rpx;
+    color: #b65553;
+    font-size: 28rpx;
+    font-weight: 800;
+    line-height: -20rpx;
+    margin-left: 20rpx;
+    display: inline-block;
 }

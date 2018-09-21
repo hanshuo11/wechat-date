@@ -14,17 +14,17 @@ Page({
     this.dialog = this.selectComponent("#dialog");
   },
   onLoad: function () {
-    wx.request({
-      url: 'https://v.juhe.cn/laohuangli/d', //仅为示例，并非真实的接口地址
-      data: {
-        date: '2018-09-19',
-        key: 'f8b40fe7e6530c4702480d187a970355'
-      },
-      method:"GET",
-      success(res) {
-        console.log(res)
-      }
-    })
+    // wx.request({
+    //   url: 'http://v.juhe.cn/laohuangli/d', //仅为示例，并非真实的接口地址
+    //   data: {
+    //     date: '2018-09-19',
+    //     key: 'f8b40fe7e6530c4702480d187a970355'
+    //   },
+    //   method:"GET",
+    //   success(res) {
+    //     console.log(res.data)
+    //   }
+    // })
   },
   showDialog() {
     this.dialog.showDialog();
