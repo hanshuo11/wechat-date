@@ -2,43 +2,58 @@
 <view class="container">
   <view class="date-box">
     <view class="date-box-day">30</view>
-    <view class="date-box-year">二零一八年戊戌(狗)年</view>
+    <view class="date-box-year">二零一八年九月二十日</view>
   </view>
   <view class="content">
     <view class="shengxiao-line">
+      <!-- 生肖 -->
       <view class="constellation"></view>
       <view class="yinli">
-        
+        <view class="yinli-item">
+          <view class="ceiling">戊戌(狗)年</view>
+          <view class="floor border-right">八月十一</view>
+        </view>
+        <view class="yinli-item">
+          <view class="ceiling">Saturday</view>
+          <view class="floor border-left">星期六</view>
+        </view>
       </view>
+      <!-- 星座 -->
       <view class="shengxiao"></view>
     </view>
-    <view class="content-line fram">
+    <view class="content-line">
       <view class="icon-font">宜</view>
       <view class="content-font">
-        <text class="font">娶嫁</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">娶嫁</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
+        开光 求嗣 雕刻 嫁娶 订盟 纳采 
       </view>
     </view>
     <view class="content-line frame">
       <view class="icon-font">忌</view>
       <view class="content-font">
-        <text class="font">娶嫁</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
-        <text class="font">哈哈</text>
+        订盟 纳采 祭祀 祈福 安香 出火 修造 
+      </view>
+    </view>
+    <view class="bottom-box frame">
+      <view class="bottom-box-item red-border-right">
+        <view class="jishen">吉神宜趋</view>
+        <text class="bottom-content">月德合 五合 明堂 鸣犬对</text>
+      </view>
+      <view class="bottom-box-center">
+        <view class="chongsha red-border-bottom">冲鸡(己酉)煞西</view>
+        <view class="bottom-box-floor">
+          <view class="item red-border-right">
+            <view class="title">五行</view>
+            大溪水 破执位
+          </view>
+          <view class="item">
+            <view class="title">拜祭</view>
+            乙不栽植千株不长 卯不穿井水泉不香
+          </view>
+        </view>
+      </view>
+      <view class="bottom-box-item red-border-left">
+        <view class="xiongshen">凶神宜趋</view>
+        <text class="bottom-content">月破 大耗 灾煞 天火 五虚 月厌 地火 阴错</text>
       </view>
     </view>
   </view>
