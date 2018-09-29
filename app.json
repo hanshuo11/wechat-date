@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/date/date",
+
+    "pages/logs/logs",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +22,7 @@
         "selectedIconPath": "./images/date1.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/date/date",
         "text": "黄历",
         "iconPath": "./images/huangli.png",
         "selectedIconPath": "./images/huangli1.png"

@@ -1,6 +1,17 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!-- logs.wxml -->
+<view class="date-box">
+  <view class="week-box">
+    <block wx:for='{{ weekArr }}'>
+      <view class="week-items" style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>
+        {{ item }}
+      </view>
+    </block>
+  </view>
+  <view class="day-box">
+    <block wx:for='{{ arr }}'>
+      <view style='{{ index == 0 ? "margin-left:" + sysW * (marLet-1) + "px;" : ""}} width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class='{{ item ==  getDate ? "dateOn" : "day-items"}}'>
+        {{ item }}
+      </view>
+    </block>
+  </view>
 </view>
