@@ -1,17 +1,21 @@
 <!-- logs.wxml -->
 <view class="date-box">
-  <view class="week-box">
-    <block wx:for='{{ weekArr }}'>
-      <view class="week-items" style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>
-        {{ item }}
-      </view>
-    </block>
+  <view class="date-choose">
+    <icon class="iconfont icon-left" bindtap="leftDate" style="margin-right:25rpx"></icon>
+    <text class="year-month">{{year}}年{{month}}月</text>
+    <icon class="iconfont icon-right" bindtap="rightDate" style="margin-left:25rpx"></icon>
   </view>
-  <view class="day-box">
-    <block wx:for='{{ arr }}'>
-      <view style='{{ index == 0 ? "margin-left:" + sysW * (marLet-1) + "px;" : ""}} width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class='{{ item ==  getDate ? "dateOn" : "day-items"}}'>
-        {{ item }}
+  <view class="date-child-box">
+    <view class="week-box">
+      <view wx:for='{{ weekArr }}' wx:key="index" class="week-items">{{ item }}</view>
+    </view>
+    <view class="day-box">
+      <!-- style='{{ index == 0 ? "margin-left:" + 100 * firstDay + "rpx;" : "" }}' -->
+      <view wx:for='{{ arr }}' wx:key="index" bindtap="chooseDay" data-item="{{item}}" class='{{ (item.num == nowDay&&item.currentMonth==true)? "dateOn day-items" : "day-items" }}  {{!item.currentMonth?"lastMonthDay":""}} {{!item.currentMonth?"nextMonthDay":""}} {{(today.flag&&item.num==today.num)?"redBorder":""}}'>
+        <view class="num">{{ item.num }}</view>
+        <view class="calendar">{{item.calendar.IDayCn}}</view>
       </view>
-    </block>
+    </view>
   </view>
+  <view class="date-card"></view>
 </view>

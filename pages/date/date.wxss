@@ -6,34 +6,88 @@
     align-items: center;
     position: fixed;
     box-sizing: border-box;
-    padding-left: 20rpx;
+}
+.date-choose{
+    width: 100%;
+    height:80rpx;
+    text-align:center;
+    line-height:80rpx;
+    border-bottom: 1rpx solid #eee;
+}
+.date-child-box{
+    display: block;
+    /* padding: 0 20rpx; */
+}
+.icon-left:before{
+    content:"\e68a";
+}
+.year-month{
+    font-size:35rpx;
+}
+.icon-right:before{
+    content:"\e6c6";
 }
 
 .week-box {
-    width: 100%;
+    width: 95%;
+    margin:0 auto;
     display: flex;
     flex-direction: row;
 }
 
 .week-items {
+    width:100rpx;
+    height:60rpx;
+    line-height: 60rpx;
     text-align: center;
     font-size: 40rpx;
 }
 
 .day-box {
-    width: 100%;
+    width: 95%;
+    margin:0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.day-items {
+.day-box view {
     text-align: center;
-    font-size: 40rpx;
+}
+
+.day-items{
+    width:100rpx;
+    height:85rpx;
+    text-align: center;
+    font-size: 38rpx;
+}
+.day-items .calendar{
+    margin-top:-10rpx;
+    font-size: 25rpx;
+}
+
+.lastMonthDay{
+    color:#eee;
+}
+.nextMonthDay{
+    color:#eee;
 }
 
 .dateOn {
-    border-radius: 50%;
+    border-radius: 40%;
+    background-color: #cf3339;
+    color: #fff;
     text-align: center;
-    font-size: 40rpx;
-    font-weight: 600;
+}
+.redBorder{
+    border-radius: 40%;
+    border: 0rpx solid #cf3339;
+    color: #cf3339;
+    text-align: center;
+}
+.date-card{
+    width:92%;
+    height:38%;
+    border:1rpx solid #eee;
+    position: fixed;
+    bottom:0;
 }

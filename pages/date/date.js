@@ -1,56 +1,106 @@
 //logs.js
 const util = require('../../utils/util.js')
+const calendar = require('../../utils/calendar.js')
+
 
 Page({
   data: {
     arr: [],
-    sysW: null,
     lastDay: null,
     firstDay: null,
-    weekArr: [ '一', '二', '三', '四', '五', '六','日'],
+    weekArr: ['日', '一', '二', '三', '四', '五', '六'],
     year: null,
-    marLet: null
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    month: null,
+    nowDay: null,
+    today:{
+      flag:false,
+      num:null
+    }
   },
-  dataTime:function(){
+  // 获取当前的日期，或者获取指定日期
+  dataTime: function (year, month, day) {
+    this.data.arr = [];
+    // 获取当前单位日期
     var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth() ;
-    var months = date.getMonth() + 1;
-
-
-    //获取现今年份
+    var year = year ? year : date.getFullYear();
+    var nowMonth = month ? month : date.getMonth() + 1;
+    //赋值
     this.data.year = year;
-
-    //获取现今月份
-    this.data.month = months;
-
-    //获取今日日期
-    this.data.getDate = date.getDate();
-
-    //最后一天是几号
-    var d = new Date(year, months, 0);
-    this.data.lastDay =  d.getDate();
-
-    //第一天星期几
-    let firstDay = new Date(year, month, 1);
-    this.data.firstDay =  firstDay.getDay();
-  },
-  onLoad: function () {
-    this.dataTime()
-
+    this.data.month = this.data.months[nowMonth - 1];
+    this.data.nowDay = day ? day : date.getDate();
+    this.data.lastDay = new Date(year, nowMonth, 0).getDate();
+    this.data.firstDay = new Date(year, nowMonth - 1, 1).getDay();
+    this.data.today.num = date.getDate();
     //根据得到今月的最后一天日期遍历 得到所有日期
     for (var i = 1; i < this.data.lastDay + 1; i++) {
-      this.data.arr.push(i);
+      this.data.arr.push({
+        num: i,
+        currentMonth: true,
+        calendar: calendar.calendar.solar2lunar(this.data.year, this.data.month, i)
+      });
     }
-    var res = wx.getSystemInfoSync();
+    // 得到上个月的最后一天
+    var lastMonthDayNum = new Date(2018, this.data.month - 1, 0).getDate();
+    for (var i = lastMonthDayNum; i > lastMonthDayNum - this.data.firstDay; i--) {
+      this.data.arr.unshift({
+        num: i,
+        currentMonth: false
+      });
+    }
+    // 算出下个月的其实天数
+    var arr = this.data.arr.length;
+    for (var w = 1; w <= (Math.ceil(arr / 7) * 7 - arr); w++) {
+      this.data.arr.push({
+        num: w,
+        currentMonth: false
+      });
+    }
+  },
+  onLoad: function () {
+    this.dataTime();
+
+    this.setDataChange();
+  },
+  // 渲染参数
+  setDataChange: function () {
     this.setData({
-      sysW: res.windowHeight / 11,//更具屏幕宽度变化自动设置宽度
-      marLet: this.data.firstDay,
-      arr: this.data.arr,
-      year: this.data.year,
-      getDate: this.data.getDate,
-      month: this.data.month
+      ...this.data
     });
-    console.log(this.data);
+  },
+  leftDate: function () {
+    this.data.month--;
+    if (this.data.month < 1) {
+      this.data.year--;
+      this.data.month = this.data.months[11]
+    };
+    this.data.today.flag=false;
+    this.dataTime(this.data.year, this.data.month);
+    this.setDataChange();
+  },
+  rightDate: function () {
+    this.data.month++;
+    if (this.data.month > 12) {
+      this.data.year++;
+      this.data.month = this.data.months[0]
+    };
+    this.data.today.flag=false;
+    this.dataTime(this.data.year, this.data.month);
+    this.setDataChange();
+  },
+  chooseDay: function (event) {
+    var item = event.currentTarget.dataset.item;
+    var now = new Date().getDate();
+    console.log(now);
+    if (item.currentMonth) {
+      if (item.num != now) {
+        this.data.today.flag=true;
+      }else{
+        this.data.today.flag=false;
+      }
+      this.data.nowDay = item.num;
+      this.setDataChange();
+      console.log(calendar.calendar.solar2lunar(this.data.year, this.data.month, item.num));
+    }
   }
 })
